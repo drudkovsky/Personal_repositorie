@@ -5,12 +5,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Дополнительно"
+        android:textAllCaps="true"
+        android:textSize="16sp" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Сливки"
+            android:paddingLeft="24dp"
+            android:textSize="16sp"
+            android:id="@+id/checkBox_id"/>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Quntity"
+        android:text="Количество"
         android:textAllCaps="true"
         android:textSize="16sp" />
 
@@ -47,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Order Summary"
+        android:text="Детали заказа"
         android:textAllCaps="true"
         android:textSize="16sp" />
 
@@ -56,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="$ 0"
+        android:text="0 Руб"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
@@ -66,7 +82,7 @@
         android:layout_height="wrap_content"
         android:onClick="submitOrder"
         android:paddingLeft="8dp"
-        android:text="Order"
+        android:text="Заказ"
         android:textAllCaps="true"
         android:textSize="16sp" />
     <Button
@@ -74,7 +90,7 @@
         android:layout_height="wrap_content"
         android:onClick="Reload"
         android:paddingLeft="8dp"
-        android:text="Reload"
+        android:text="Очистить"
         android:textAllCaps="true"
         android:textSize="16sp" />
 

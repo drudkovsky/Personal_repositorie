@@ -3,6 +3,7 @@ package com.example.android.justjava;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -24,6 +25,8 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        CheckBox checkBoxState =(CheckBox) findViewById(R.id.checkBox_id);
+        boolean ischeckBoxState = checkBoxState.isChecked();
         String PersoneName = "Ублюдок";
         int price = calculatePrice();
         /*String PriceMessage = "Total: " + price + " РУБ";
@@ -79,6 +82,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
     public String createOrderSummury(int price,String PersoNename){
+
         String orderSum = "name : " + PersoNename +
                 "\nQuantity : " + quantity +
                 "\nTotal : " + price +
@@ -86,4 +90,7 @@ public class MainActivity extends ActionBarActivity {
         return orderSum;
 
     }
-}
+
+    };
+
+
