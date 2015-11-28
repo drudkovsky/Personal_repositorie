@@ -2,8 +2,10 @@ package com.example.android.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -13,6 +15,8 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends ActionBarActivity {
     int quantity = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +30,16 @@ public class MainActivity extends ActionBarActivity {
      */
     public void submitOrder(View view) {
         CheckBox checkBoxState =(CheckBox) findViewById(R.id.checkBox_id);
-        boolean ischeckBoxState = checkBoxState.isChecked();
-        String PersoneName = "Ублюдок";
-        int price = calculatePrice();
+        boolean ischeckBoxState1 = checkBoxState.isChecked();
+        CheckBox checkBoxState2 =(CheckBox) findViewById(R.id.checkBox2_id);
+        boolean ischeckBoxState2 = checkBoxState2.isChecked();
+        EditText Name = (EditText) findViewById(R.id.edit_text_id);
+        String PersoneName = Name.getText().toString();
+        /*Log.v("MainActivity", "The name is :" + PersoneName );*/
+        int price = calculatePrice( ischeckBoxState1, ischeckBoxState2);
         /*String PriceMessage = "Total: " + price + " РУБ";
         PriceMessage = PriceMessage + "\n You, dirty MotherFucker!";*/
-        String orderSum = createOrderSummury(price, PersoneName);
+        String orderSum = createOrderSummury(price, PersoneName,ischeckBoxState1,ischeckBoxState2  );
         displayOrderSummury(orderSum);
     }
 
@@ -76,17 +84,28 @@ public class MainActivity extends ActionBarActivity {
         priceTextView.setText(orderSum);
     }
 
-    private int calculatePrice(){
-        int price = (quantity * 150);
+    private int calculatePrice(boolean ischeckBoxState2, boolean ischeckBoxState1){
+        int govno = 0;
+        int trah = 0;
+        if(ischeckBoxState1)
+        { govno = 50;}
+        if(ischeckBoxState2)
+        { trah = 70;}
+        int adiing = trah + govno;
+        int price = ((150 + adiing) * quantity);
         return price;
 
     }
-    public String createOrderSummury(int price,String PersoNename){
+    public String createOrderSummury(int price,String PersoneName, boolean ischeckBoxState1, boolean ischeckBoxState2){
 
-        String orderSum = "name : " + PersoNename +
-                "\nQuantity : " + quantity +
-                "\nTotal : " + price +
-                "\nТы, ублюдок мать твою!";
+
+
+        String orderSum = "Имя : " + PersoneName +
+                "\nКоличество : " + quantity +
+                "\nВсего : " + price +
+                "\nТы, ублюдок мать твою!" +
+                "\n Решил меня трахнуть? " + ischeckBoxState1 +
+                "\n Говно собачье! " + ischeckBoxState2;
         return orderSum;
 
     }
