@@ -1,5 +1,6 @@
 package com.example.android.justjava;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -45,12 +47,22 @@ public class MainActivity extends ActionBarActivity {
 
     public void increment(View view) {
         quantity = quantity + 1;
+        if(quantity > 100){
+            quantity = 100;
+            Toast.makeText(getApplicationContext(), "Слишком много кофе! Ты же обоссыш штанишки",
+                    Toast.LENGTH_LONG).show();
+        }
         display(quantity);
 
     }
 
     public void discrement(View view) {
         quantity = quantity - 1;
+        if (quantity < 0){
+            quantity = 0;
+            Toast.makeText(getApplicationContext(), "Нельзя заказать меньше одной чашки, идиот!",
+                    Toast.LENGTH_LONG).show();
+        }
         display(quantity);
 
     }
@@ -81,8 +93,10 @@ public class MainActivity extends ActionBarActivity {
 
     private void displayOrderSummury(String orderSum) {
         TextView priceTextView = (TextView) findViewById(R.id.Order_summary_text_view);
-        priceTextView.setText(orderSum);
+      priceTextView.setText(orderSum);
+
     }
+
 
     private int calculatePrice(boolean ischeckBoxState2, boolean ischeckBoxState1){
         int govno = 0;
@@ -106,7 +120,16 @@ public class MainActivity extends ActionBarActivity {
                 "\nТы, ублюдок мать твою!" +
                 "\n Решил меня трахнуть? " + ischeckBoxState1 +
                 "\n Говно собачье! " + ischeckBoxState2;
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/html");
+        intent.putExtra(Intent.EXTRA_EMAIL, "emailaddress@emailaddress.com");
+        intent.putExtra(Intent.EXTRA_SUBJECT, " Сука. Жопа");
+        intent.putExtra(Intent.EXTRA_TEXT, orderSum);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
         return orderSum;
+
 
     }
 
