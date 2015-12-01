@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Джава Хуява</string>
+    <string name="hint">Введи своё имя, Ублюдок</string>
+    <string name="addition">Дополнительно</string>
+    <string name="first_check">Решил меня трахнуть?</string>
+    <string name="second_check">Говно собачье!</string>
+    <string name="Quantity">Количество</string>
+    <string name="data">Детали заказа</string>
+    <string name="money">0 РУБ</string>
+    <string name="order">Заказ</string>
+    <string name="reload">Очистить</string>
+
+</resources>

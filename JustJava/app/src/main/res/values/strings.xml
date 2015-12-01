@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Just Java</string>
+    <string name="hint">Enter your name</string>
+    <string name="addition">Addition info</string>
+    <string name="first_check">Are you fucking with me?</string>
+    <string name="second_check">Stupid shit</string>
+    <string name="Quantity">Количество</string>
+    <string name="data">Детали заказа</string>
+    <string name="money">0 РУБ</string>
+    <string name="order">Заказ</string>
+    <string name="reload">Очистить</string>
+
 </resources>

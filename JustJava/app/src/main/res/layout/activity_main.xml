@@ -19,14 +19,14 @@
             android:id="@+id/edit_text_id"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:hint="Введи своё имя, Ублюдок"
+            android:hint="@string/hint"
             android:inputType="textCapWords"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Дополнительно"
+            android:text="@string/addition"
             android:textAllCaps="true"
             android:textSize="16sp" />
 
@@ -35,14 +35,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
-            android:text="Решил меня трахнуть?"
+            android:text="@string/first_check"
             android:textSize="16sp" />
         <CheckBox
             android:id="@+id/checkBox2_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="24dp"
-            android:text="Говно собачье?"
+            android:text="@string/second_check"
             android:textSize="16sp" />
 
 
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Количество"
+            android:text="@string/Quantity"
             android:textAllCaps="true"
             android:textSize="16sp" />
 
@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Детали заказа"
+            android:text="@string/data"
             android:textAllCaps="true"
             android:textSize="16sp" />
 
@@ -96,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="0 Руб"
+            android:text="@string/money"
             android:textAllCaps="true"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:onClick="submitOrder"
             android:paddingLeft="8dp"
-            android:text="Заказ"
+            android:text="@string/order"
             android:textAllCaps="true"
             android:textSize="16sp" />
 
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:onClick="Reload"
             android:paddingLeft="8dp"
-            android:text="Очистить"
+            android:text="@string/reload"
             android:textAllCaps="true"
             android:textSize="16sp" />
 
