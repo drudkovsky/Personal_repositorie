@@ -16,8 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20sp"
         android:gravity="center_horizontal"
-        android:text="Сумма :"
-        android:textSize="18sp" />
+        android:text="@string/summ"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/Entered_number_id"
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:onClick="Adding"
-            android:text="Пополнение"
+            android:text="@string/adding"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
 
@@ -48,18 +48,19 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Списание"
+            android:text="@string/extracting"
             android:textColor="@android:color/black"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:onClick="Substraction"/>
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="40dp"
-        android:onClick="Subtraction"
-        android:text="Остаток :"
+
+        android:text="@string/remainder"
         android:textSize="20sp" />
 
     <RelativeLayout
@@ -71,19 +72,18 @@
             android:id="@+id/Sunnury_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="40dp"
-            android:text=" 0 руб"
+            android:text="@string/сurrency"
             android:textColor="@android:color/black"
-            android:textSize="20sp" />
+            android:textSize="16sp" />
 
         <ImageView
             android:id="@+id/Pic_id"
             android:layout_width="180dp"
             android:layout_height="140dp"
             android:layout_alignParentRight="true"
-            android:scaleType="center"
-            android:src="@drawable/alotmoney" />
+            android:src="@drawable/nomoney" />
 
     </RelativeLayout>
 

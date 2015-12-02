@@ -27,8 +27,8 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="@string/addition"
-            android:textAllCaps="true"
-            android:textSize="16sp" />
+            style = "@style/CustomText"
+             />
 
         <CheckBox
             android:id="@+id/checkBox_id"
@@ -88,8 +88,7 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="@string/data"
-            android:textAllCaps="true"
-            android:textSize="16sp" />
+            style = "@style/CustomText"/>
 
         <TextView
             android:id="@+id/Order_summary_text_view"
@@ -100,15 +99,28 @@
             android:textAllCaps="true"
             android:textColor="@android:color/black"
             android:textSize="16sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="submitOrder"
             android:paddingLeft="8dp"
-            android:text="@string/order"
+            android:text="@string/Summary"
             android:textAllCaps="true"
             android:textSize="16sp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="MailInt"
+                android:paddingLeft="8dp"
+                android:text="@string/order"
+                android:textAllCaps="true"
+                android:textSize="16sp" />
+        </LinearLayout>
 
         <Button
             android:layout_width="wrap_content"

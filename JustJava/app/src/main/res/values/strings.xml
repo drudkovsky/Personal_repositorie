@@ -7,7 +7,8 @@
     <string name="Quantity">Количество</string>
     <string name="data">Детали заказа</string>
     <string name="money">0 РУБ</string>
-    <string name="order">Заказ</string>
+    <string name="Summary">Детали</string>
+    <string name="order">Заказать</string>
     <string name="reload">Очистить</string>
 
 </resources>

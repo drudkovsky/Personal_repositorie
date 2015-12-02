@@ -17,6 +17,7 @@ import java.text.NumberFormat;
  */
 public class MainActivity extends ActionBarActivity {
     int quantity = 0;
+    String orderSum = "";
 
 
 
@@ -30,7 +31,7 @@ public class MainActivity extends ActionBarActivity {
     /**
      * This method is called when the order button is clicked.
      */
-    public void submitOrder(View view) {
+    public String submitOrder(View view) {
         CheckBox checkBoxState =(CheckBox) findViewById(R.id.checkBox_id);
         boolean ischeckBoxState1 = checkBoxState.isChecked();
         CheckBox checkBoxState2 =(CheckBox) findViewById(R.id.checkBox2_id);
@@ -41,9 +42,9 @@ public class MainActivity extends ActionBarActivity {
         int price = calculatePrice( ischeckBoxState1, ischeckBoxState2);
         /*String PriceMessage = "Total: " + price + " РУБ";
         PriceMessage = PriceMessage + "\n You, dirty MotherFucker!";*/
-        String orderSum = createOrderSummury(price, PersoneName,ischeckBoxState1,ischeckBoxState2  );
+        String orderSum = createOrderSummury(price, PersoneName,ischeckBoxState1,ischeckBoxState2 );
         displayOrderSummury(orderSum);
-    }
+    return orderSum;}
 
     public void increment(View view) {
         quantity = quantity + 1;
@@ -57,6 +58,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void discrement(View view) {
+
         quantity = quantity - 1;
         if (quantity < 0){
             quantity = 0;
@@ -84,7 +86,7 @@ public class MainActivity extends ActionBarActivity {
     private void display(int number) {
         TextView quantityTextView = (TextView) findViewById(
                 R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
+        quantityTextView.setText(number + "РУБ");
     }
 
     /**
@@ -94,6 +96,7 @@ public class MainActivity extends ActionBarActivity {
     private void displayOrderSummury(String orderSum) {
         TextView priceTextView = (TextView) findViewById(R.id.Order_summary_text_view);
       priceTextView.setText(orderSum);
+        Log.v("MainActivity", orderSum );
 
     }
 
@@ -114,25 +117,29 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-        String orderSum = "Имя : " + PersoneName +
+        orderSum = "Имя : " + PersoneName +
                 "\nКоличество : " + quantity +
                 "\nВсего : " + price +
                 "\nТы, ублюдок мать твою!" +
                 "\n Решил меня трахнуть? " + ischeckBoxState1 +
                 "\n Говно собачье! " + ischeckBoxState2;
+
+        return orderSum;
+
+
+    }
+    public void MailInt (View view){
+
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/html");
         intent.putExtra(Intent.EXTRA_EMAIL, "emailaddress@emailaddress.com");
         intent.putExtra(Intent.EXTRA_SUBJECT, " Сука. Жопа");
         intent.putExtra(Intent.EXTRA_TEXT, orderSum);
         if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
-        return orderSum;
+            startActivity(intent); }
 
 
-    }
-
+    };
     };
 
 
