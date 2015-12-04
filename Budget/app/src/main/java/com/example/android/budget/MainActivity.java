@@ -1,5 +1,6 @@
 package com.example.android.budget;
 
+import android.graphics.Color;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -64,6 +65,16 @@ public class MainActivity extends AppCompatActivity {
         if (summValue < 3000) {
             pic.setImageResource(R.drawable.nomoney);
         }
+        if (summValue < 0){
+            TextView dept = (TextView) findViewById(R.id.Sunnury_id);
+            dept.setTextColor(Color.parseColor("#F44336"));
+            pic.setImageResource(R.drawable.overbudget);
+        }
+        if (summValue > 0){
+            TextView dept = (TextView) findViewById(R.id.Sunnury_id);
+            dept.setTextColor(Color.parseColor("#000000"));
+            pic.setImageResource(R.drawable.overbudget);
+        }
     }
 
     // Method for substruction intered number to SummValue and displaying the number
@@ -87,6 +98,16 @@ public class MainActivity extends AppCompatActivity {
         }
         if (summValue < 3000) {
             pic.setImageResource(R.drawable.nomoney);
+        }
+        if (summValue < 0){
+            TextView dept = (TextView) findViewById(R.id.Sunnury_id);
+            dept.setTextColor(Color.parseColor("#F44336"));
+            pic.setImageResource(R.drawable.overbudget);
+        }
+        if (summValue >= 0){
+            TextView dept = (TextView) findViewById(R.id.Sunnury_id);
+            dept.setTextColor(Color.parseColor("#000000"));
+            pic.setImageResource(R.drawable.overbudget);
         }
     }
 }
