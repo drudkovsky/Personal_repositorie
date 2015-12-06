@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Бюджет</string>
+    <string name="summ">Сумма :</string>
+    <string name="adding">Пополнение</string>
+    <string name="extracting">Списание</string>
+    <string name="remainder">Остаток :</string>
+    <string name="сurrency">Текущий остаток</string>
+</resources>
