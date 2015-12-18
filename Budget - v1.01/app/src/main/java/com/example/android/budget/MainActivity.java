@@ -178,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("summValue", summValue);
         editor.commit();
         display(summValue);
+        Toast.makeText(getApplicationContext(), "Денежка капнула на счёт!!",
+                Toast.LENGTH_SHORT).show();
 
 
     }
@@ -190,6 +192,8 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("summValue", summValue);
         editor.commit();
         display(summValue);
+        Toast.makeText(getApplicationContext(), "Ты опять на что-то потратился!",
+                Toast.LENGTH_SHORT).show();
     }
 }
 
